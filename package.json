@@ -1,6 +1,6 @@
 {
   "name": "undefsafe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Undefined safe way of extracting object properties",
   "main": "lib/undefsafe.js",
   "directories": {
