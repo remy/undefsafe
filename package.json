@@ -9,6 +9,10 @@
   "scripts": {
     "test": "node_modules/mocha/bin/_mocha --ui bdd test/**/*.test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/remy/undefsafe.git"
+  },
   "keywords": [
     "undefined"
   ],
