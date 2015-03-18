@@ -19,4 +19,4 @@ var object = {
 console.log(undefsafe(object, 'a.b.e') === false);
 ```
 
-Demo: [http://jsbin.com/eRoqAMe/1/edit?js,console](http://jsbin.com/eRoqAMe/1/edit?js,console)
+Demo: [https://jsbin.com/eroqame/3/edit?js,console](https://jsbin.com/eroqame/3/edit?js,console)
