@@ -1,7 +1,7 @@
 'use strict';
 /*global describe:true, it: true */
-var assert = require('assert'),
-    undefsafe = require('../lib/undefsafe');
+var assert = require('assert');
+var undefsafe = require('../lib/undefsafe');
 
 describe('undefsafe', function () {
   it('should handle primatives', function () {
@@ -10,8 +10,8 @@ describe('undefsafe', function () {
   });
 
   it('should handle empty objects', function () {
-    var value = {},
-        r;
+    var value = {};
+    var r;
 
     r = undefsafe(value, '');
     assert(r === value, 'value is value' + r);
@@ -23,6 +23,21 @@ describe('undefsafe', function () {
     assert(r === undefined, 'value.foo.bar is undefined: ' + r);
   });
 
+  it('should handle null properties', function () {
+    var value = {
+      a: {
+        b: null,
+      },
+    };
+    var r;
+
+    r = undefsafe(value, 'a.b');
+    assert(r === null, 'value.a.b is null: ' + r);
+
+    r = undefsafe(value, 'a.b.c');
+    assert(r === undefined, 'value.a.b.c is undefined: ' + r);
+  });
+
   it('should find deep object properties', function () {
     var value = {
       a: {
@@ -30,16 +45,17 @@ describe('undefsafe', function () {
           c: {
             d: 10,
             e: {
-              f: 20
+              f: 20,
             },
             g: true,
             h: false,
             i: undefined,
-            j: null
-          }
-        }
-      }
-    }, r;
+            j: null,
+          },
+        },
+      },
+    };
+    var r;
 
     r = undefsafe(value, 'a');
     assert(r === value.a, 'value.a: ' + r + ' ' + value.a);
