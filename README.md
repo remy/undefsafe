@@ -11,12 +11,13 @@ var object = {
     b: {
       c: 1,
       d: [1,2,3],
-      e: false
+      e: 'remy'
     }
   }
 };
 
-console.log(undefsafe(object, 'a.b.e') === false);
+console.log(undefsafe(object, 'a.b.e')); // "remy"
+console.log(undefsafe(object, 'a.b.not.found')); // undefined
 ```
 
 Demo: [https://jsbin.com/eroqame/3/edit?js,console](https://jsbin.com/eroqame/3/edit?js,console)
