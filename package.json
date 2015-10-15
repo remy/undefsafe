@@ -17,7 +17,7 @@
     "undefined"
   ],
   "author": "Remy Sharp",
-  "license": "MIT / http://rem.mit-license.org",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "~1.16.2"
   }
