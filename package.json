@@ -1,6 +1,6 @@
 {
   "name": "undefsafe",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Undefined safe way of extracting object properties",
   "main": "lib/undefsafe.js",
   "tonicExampleFilename": "example.js",
