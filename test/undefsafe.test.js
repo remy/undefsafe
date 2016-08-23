@@ -1,5 +1,5 @@
 'use strict';
-var test = require('tap').test;
+var test = require('tap-only');
 var undefsafe = require('../lib/undefsafe');
 
 test('should handle primatives', function (t) {
