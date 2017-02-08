@@ -48,16 +48,24 @@ test('should find properties with periods in them', function (t) {
 
   var r = undefsafe(value, 'a["one.two"]');
   t.equal(r, true, 'a["one.two"]: ' + r);
-  t.end();
-});
 
-test('should find properties with periods in them (v2)', function (t) {
-  var value = {
+  value = {
     a: { 'one.two.and\three': true }
   };
 
-  var r = undefsafe(value, `a['one.two.and\three']`);
+  r = undefsafe(value, `a['one.two.and\three']`);
   t.equal(r, true, 'weird: ' + r);
+
+  value = {
+    a: { 'one.two.and\three': [
+      false,
+      true,
+    ] }
+  };
+
+  r = undefsafe(value, `a['one.two.and\three'].1`);
+  t.equal(r, true, 'combo: ' + r);
+
   t.end();
 });
 
