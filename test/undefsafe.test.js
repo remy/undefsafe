@@ -41,6 +41,27 @@ test('should handle null properties', function (t) {
   t.end();
 });
 
+test('should find properties with periods in them', function (t) {
+  var value = {
+    a: { 'one.two': true }
+  };
+
+  var r = undefsafe(value, 'a["one.two"]');
+  t.equal(r, true, 'a["one.two"]: ' + r);
+  t.end();
+});
+
+test('should find properties with periods in them (v2)', function (t) {
+  var value = {
+    a: { 'one.two.and\three': true }
+  };
+
+  var r = undefsafe(value, `a['one.two.and\three']`);
+  t.equal(r, true, 'weird: ' + r);
+  t.end();
+});
+
+
 test('should find deep object properties', function (t) {
   var value = {
     a: {
