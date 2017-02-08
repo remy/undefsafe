@@ -66,6 +66,13 @@ test('should find properties with periods in them', function (t) {
   r = undefsafe(value, `a['one.two.and\three'].1`);
   t.equal(r, true, 'combo: ' + r);
 
+  value = {
+    'one.two': true
+  };
+
+  r = undefsafe(value, `['one.two']`);
+  t.equal(r, true, 'root: ' + r);
+
   t.end();
 });
 
