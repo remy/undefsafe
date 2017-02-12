@@ -18,9 +18,23 @@ var fixture = {
   ]
 };
 
+test('2.0.0: match all.*', function (t) {
+  var res = undefsafe(fixture, '*.*.*.1');
+  t.deepEqual(res, ['two', 'four']);
+  t.end();
+});
+
+
+test('2.0.0: match all.*', function (t) {
+  var res = undefsafe(fixture, 'commits.*.modified.*.b');
+  t.deepEqual(res, ['one', 'two', 'two', 'four']);
+  t.end();
+});
+
+
 test('get value on first * selector', function (t) {
-  var res = undefsafe(fixture, 'commits.*.modified.*');
-  t.equal(res, 'one');
+  var res = undefsafe(fixture, 'commits.*.modified.0');
+  t.deepEqual(res, ['one', 'two']);
   t.end();
 });
 
@@ -44,7 +58,7 @@ test('match * selector returns undefined', function (t) {
 });
 
 test('match * selector works on objects', function (t) {
-  var res = undefsafe(fixture, '*.*.modified.*');
+  var res = undefsafe(fixture, '*.*.modified.*', 'one');
   t.equal(res, 'one');
   t.end();
 });
