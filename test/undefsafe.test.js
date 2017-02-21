@@ -8,6 +8,12 @@ test('should handle primatives', function (t) {
   t.end();
 });
 
+test('should handle null', function (t) {
+  var r = undefsafe(null, 'foo');
+  t.equal(r, undefined, 'undefsafe works with null');
+  t.end();
+});
+
 test('should handle empty objects', function (t) {
   var value = {};
   var r;
