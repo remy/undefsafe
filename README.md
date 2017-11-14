@@ -6,7 +6,9 @@ Can also be used to safely set deep values.
 
 ## Installation
 
-```npm install undefsafe --save```
+```bash
+npm install undefsafe --save
+```
 
 ## Usage
 
