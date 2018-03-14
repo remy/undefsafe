@@ -4,6 +4,12 @@ Simple *function* for retrieving deep object properties without getting "Cannot 
 
 Can also be used to safely set deep values.
 
+## Installation
+
+```bash
+npm install undefsafe --save
+```
+
 ## Usage
 
 ```js
