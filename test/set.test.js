@@ -2,7 +2,7 @@
 var test = require('tap').test;
 var undefsafe = require('../lib/undefsafe');
 
-test('setting deep object values', function (t) {
+test('setting deep object values', function(t) {
   var fixture = {
     a: {
       b: {
@@ -14,11 +14,11 @@ test('setting deep object values', function (t) {
   };
 
   undefsafe(fixture, 'a.b.c.d', 20);
-  t.equal(fixture.a.b.c.d, 20, 'deep primative changed');
+  t.equal(fixture.a.b.c.d, 20, 'deep primitive changed');
   t.end();
 });
 
-test('setting shallow object values', function (t) {
+test('setting shallow object values', function(t) {
   var fixture = {
     a: {
       b: {
@@ -34,7 +34,7 @@ test('setting shallow object values', function (t) {
   t.end();
 });
 
-test('undef value', function (t) {
+test('undef value', function(t) {
   var fixture = {
     a: {
       b: {
@@ -50,7 +50,7 @@ test('undef value', function (t) {
   t.end();
 });
 
-test('missing value', function (t) {
+test('missing value', function(t) {
   var fixture = {
     a: {
       b: {

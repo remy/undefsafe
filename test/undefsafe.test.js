@@ -2,19 +2,19 @@
 var test = require('tap-only');
 var undefsafe = require('../lib/undefsafe');
 
-test('should handle primatives', function (t) {
+test('should handle primatives', function(t) {
   var r = undefsafe(1, '');
   t.equal(r, 1, 'undefsafe is 1: ' + r);
   t.end();
 });
 
-test('should handle null', function (t) {
+test('should handle null', function(t) {
   var r = undefsafe(null, 'foo');
   t.equal(r, undefined, 'undefsafe works with null');
   t.end();
 });
 
-test('should handle empty objects', function (t) {
+test('should handle empty objects', function(t) {
   var value = {};
   var r;
 
@@ -30,11 +30,11 @@ test('should handle empty objects', function (t) {
   t.end();
 });
 
-test('should handle null properties', function (t) {
+test('should handle null properties', function(t) {
   var value = {
     a: {
-      b: null,
-    },
+      b: null
+    }
   };
   var r;
 
@@ -47,7 +47,7 @@ test('should handle null properties', function (t) {
   t.end();
 });
 
-test('should find properties with periods in them', function (t) {
+test('should find properties with periods in them', function(t) {
   var value = {
     a: { 'one.two': true }
   };
@@ -63,10 +63,7 @@ test('should find properties with periods in them', function (t) {
   t.equal(r, true, 'weird: ' + r);
 
   value = {
-    a: { 'one.two.and\three': [
-      false,
-      true,
-    ] }
+    a: { 'one.two.and\three': [false, true] }
   };
 
   r = undefsafe(value, `a['one.two.and\three'].1`);
@@ -82,23 +79,22 @@ test('should find properties with periods in them', function (t) {
   t.end();
 });
 
-
-test('should find deep object properties', function (t) {
+test('should find deep object properties', function(t) {
   var value = {
     a: {
       b: {
         c: {
           d: 10,
           e: {
-            f: 20,
+            f: 20
           },
           g: true,
           h: false,
           i: undefined,
-          j: null,
-        },
-      },
-    },
+          j: null
+        }
+      }
+    }
   };
   var r;
 
