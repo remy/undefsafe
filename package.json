@@ -30,6 +30,6 @@
     "tap-only": "0.0.5"
   },
   "dependencies": {
-    "debug": "^2.2.0"
+    "debug": "^4.1.1"
   }
 }
